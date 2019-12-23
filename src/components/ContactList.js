@@ -23,19 +23,19 @@ function ContactList(props) {
     }));
 
     const classes = useStyles();
-    
-    if (!props.data){
+
+    if (!props.data) {
         return null;
-    }else{
+    } else {
         return (
             <div>
                 <List className={classes.root}>
-                        {props.data.map(user => {
-                            return (
-                                <div>
+                    {props.data.map(user => {
+                        return (
+                            <div>
                                 <ListItem alignItems="flex-start">
                                     <ListItemAvatar>
-                                            <Avatar alt="Remy Sharp" src="https://i.pravatar.cc/300" />
+                                        <Avatar alt="Remy Sharp" src="https://i.pravatar.cc/300" />
                                     </ListItemAvatar>
                                     <ListItemText
                                         primary={user.name}
@@ -48,16 +48,16 @@ function ContactList(props) {
                                                     color="textPrimary"
                                                 >
                                                     {user.username}
-                                    </Typography>
+                                                </Typography>
                                                 {" — " + user.email}
                                             </React.Fragment>
                                         }
                                     />
                                 </ListItem>
                                 <Divider variant="inset" component="li" />
-                                </div>
-                            )
-                        }
+                            </div>
+                        )
+                    }
                     )}
                 </List>
             </div>
