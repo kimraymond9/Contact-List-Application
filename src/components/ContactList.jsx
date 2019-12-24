@@ -4,61 +4,67 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import ListItemText from "@material-ui/core/ListItemText";
-import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
 import "../App.css";
 
-function ContactList(props) {
 
-  const useStyles = makeStyles(theme => ({
-    root: {
-      width: "100%",
-      maxWidth: 360,
-      backgroundColor: theme.palette.background.paper
-    },
-    inline: {
-      display: "inline"
-    },
-  }));
+class ContactList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false,
+    };
+  }
 
-  const classes = useStyles();
+  handleClose = () => {
+    this.setState({
+      open: false
+    });
+  };
 
-  if (!props.data) {
-    return null;
-  } else {
-    return (
-      <List className={classes.root}>
-        {props.data.map(user => {
-          return (
-            <div>
-              <ListItem alignItems="flex-start">
-                <ListItemAvatar>
-                  <Avatar alt="Remy Sharp" src="https://i.pravatar.cc/300" />
-                </ListItemAvatar>
-                <ListItemText
-                  primary={user.name}
-                  secondary={
-                    <React.Fragment>
-                      <Typography
-                        component="span"
-                        variant="body2"
-                        className={classes.inline}
-                        color="textPrimary"
-                      >
-                        {user.username}
-                      </Typography>
-                      {" — " + user.email}
-                    </React.Fragment>
-                  }
-                />
-              </ListItem>
-              <Divider variant="inset" component="li" />
-            </div>
-          );
-        })}
-      </List>
-    );
+  handleClick = () => {
+    this.setState({
+      open: true
+    });
+  };
+
+  render(){
+    if (!this.props.data) {
+      return null;
+    } else {
+      return (
+        <List>
+          {this.props.data.map(user => {
+            return (
+              <div>
+                <ListItem alignItems="flex-start" button>
+                  <ListItemAvatar>
+                    <Avatar alt="Remy Sharp" src="https://i.pravatar.cc/300" />
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary={user.name}
+                    secondary={
+                      <React.Fragment>
+                        <Typography
+                          component="span"
+                          variant="body2"
+                          color="textPrimary"
+                        >
+                          {user.username}
+                        </Typography>
+                        {" — " + user.email}
+                      </React.Fragment>
+                    }
+                  />
+                </ListItem>
+                <Divider variant="inset" component="li" />
+              </div>
+            );
+          })}
+        </List>
+      );
+    }
   }
 }
 
