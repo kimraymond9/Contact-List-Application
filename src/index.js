@@ -6,5 +6,4 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<div className="application"><FetchJSON /></div>, document.getElementById('root'));
 
-
 serviceWorker.unregister();
