@@ -1,12 +1,8 @@
-import Avatar from "@material-ui/core/Avatar";
 import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import ListItemText from "@material-ui/core/ListItemText";
-import Typography from "@material-ui/core/Typography";
 import React from "react";
 import BusinessCardDialog from "./BusinessCardDialog";
+import ContactListItem from "./ContactListItem";
 import "../App.css";
 
 
@@ -15,14 +11,16 @@ class ContactList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false
+      open: false,
+      clickedUser: null,
     };
     this.handleBusinessCardDialogClose = this.handleBusinessCardDialogClose.bind(this)
   }
 
-  handleClick = () => {
+  handleClick = (user) => {
     this.setState({
-      open: true
+      open: true,
+      clickedUser: user
     });
   };
 
@@ -38,40 +36,22 @@ class ContactList extends React.Component {
     } else {
       return (
         <div>
-          <BusinessCardDialog open={this.state.open} onClose={this.handleBusinessCardDialogClose} />
-            <List>
-              {this.props.data.map(user => {
-                return (
-                  <div>
-                    <ListItem alignItems="flex-start" button onClick={this.handleClick}>
-                      <ListItemAvatar>
-                        <Avatar alt="Remy Sharp" src="https://i.pravatar.cc/300" />
-                      </ListItemAvatar>
-                      <ListItemText
-                        primary={user.name}
-                        secondary={
-                          <React.Fragment>
-                            <Typography
-                              component="span"
-                              variant="body2"
-                              color="textPrimary"
-                            >
-                              {user.username}
-                            </Typography>
-                            {" — " + user.email}
-                          </React.Fragment>
-                        }
-                      />
-                    </ListItem>
-                    <Divider variant="inset" component="li" />
-                  </div>
-                );
-              })}
-            </List>
+          <BusinessCardDialog open={this.state.open} onClose={this.handleBusinessCardDialogClose} user={this.state.clickedUser}/>
+        <List>
+          {this.props.data.map(user => {
+            return (
+              <>
+                <ContactListItem user={user} handleClick={this.handleClick}/>
+                <Divider variant="inset" component="li" />
+              </>
+            );
+          })}
+        </List>
         </div>
       );
     }
   }
   }
+
 
 export default ContactList;
