@@ -7,29 +7,33 @@ import React from "react";
 import "../App.css";
 
 const ContactListItem = (props) => {
-  return (
-    <ListItem key={props.user.id} alignItems="flex-start" button onClick={() => props.handleClick(props.user)}>
-      <ListItemAvatar>
-        <Avatar alt="Remy Sharp" src={`https://i.pravatar.cc/300?img=${props.user.id}`} />
-      </ListItemAvatar>
-      <ListItemText
-        primary={props.user.name}
-        secondary={
-          <React.Fragment>
-            <Typography
-              component="span"
-              variant="body2"
-              color="textPrimary"
-            >
-              {props.user.username}
-            </Typography>
-            {" — " + props.user.email}
-          </React.Fragment>
-        }
-      />
-    </ListItem>
-  );
+  
+  if(!props.user){
+    return null;
+  }else{
+    return (
+      <ListItem key={props.user.id} alignItems="flex-start" button onClick={() => props.handleClick(props.user)}>
+        <ListItemAvatar>
+          <Avatar alt="Remy Sharp" src={`https://i.pravatar.cc/300?img=${props.user.id}`} />
+        </ListItemAvatar>
+        <ListItemText
+          primary={props.user.name}
+          secondary={
+            <React.Fragment>
+              <Typography
+                component="span"
+                variant="body2"
+                color="textPrimary"
+              >
+                {props.user.email}
+              </Typography>
+              {" — " + props.user.phone}
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+    );
+  }
 }
-
 
 export default ContactListItem;

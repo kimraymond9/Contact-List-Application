@@ -12,7 +12,7 @@ const BusinessCardDialog = (props) => {
     return null
   }else{
     return (
-      <div>
+      <>
         <Dialog onClose={props.onClose} aria-labelledby="customized-dialog-title" open={props.open}>
           <DialogContent dividers>
             <Typography gutterBottom>
@@ -25,7 +25,7 @@ const BusinessCardDialog = (props) => {
             </Button>
           </DialogActions>
         </Dialog>
-      </div>
+      </>
     )
   }
 }
