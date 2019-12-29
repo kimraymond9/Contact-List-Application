@@ -1,7 +1,8 @@
 import React from "react";
+import InteractiveMap from "./InteractiveMap"
 
 const Report = (props) => {
-  return <p>TODO reports</p>
+  return <InteractiveMap data={props.data}/>
 }
 
 export default Report;

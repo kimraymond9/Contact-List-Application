@@ -1,5 +1,4 @@
 import React from "react";
-import "../App.css";
 import Tabs from "./TabsComponent";
 
 class ContactListApp extends React.Component {
@@ -8,20 +7,21 @@ class ContactListApp extends React.Component {
     super(props);
       this.state = {
         data: null,
+        loading: true,
       };
   }
 
   componentDidMount() {
-    return fetch("http://jsonplaceholder.typicode.com/users")
+    return fetch(this.props.url)
       .then(response => response.json())
       .then(responseJson => {
-        this.setState({ data: responseJson });
+        this.setState({ data: responseJson, loading: false });
       })
       .catch(error => console.error(error));
   }
 
   render() {
-    return <Tabs data={this.state.data}/>
+    return <Tabs data={this.state.data} loading={this.state.loading}/>
   }
 }
 

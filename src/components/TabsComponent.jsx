@@ -1,11 +1,17 @@
 import React from "react";
+
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 import ContactList from "./ContactList";
 import Report from "./Report";
+
+import "../App.css";
+
 
 const TabsComponent = (props) => {
 
@@ -43,13 +49,16 @@ const TabsComponent = (props) => {
   return(
     <>
       <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+        <Tabs centered value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="Contacts" {...a11yProps(0)} />
           <Tab label="Reports" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <ContactList data={props.data}/>
+        <div id="progressIndicator">
+          {props.loading ? <CircularProgress /> : null}
+        </div>
+        <ContactList data={props.data} />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Report  data={props.data}/>

@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+#progressIndicator{
+      margin:auto;
+    width: 1%;
+    padding: 10px 0px 10px 0px;
+}
+
+.SearchBar{
+  display: inline-block;
+}
+
+.SortBy{
+  float:right;
+}
+
+@media only screen and (max-width: 420px) {
+
+.SortBy{
+  float:none;
+  width:200px;
+  
+}
+}

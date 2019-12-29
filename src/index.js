@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import ContactListApp from './components/ContactListApp';
 import * as serviceWorker from './serviceWorker';
+import "./leaflet.css";
 
-ReactDOM.render(<div className="application"><ContactListApp /></div>, document.getElementById('root'));
+const url = "http://jsonplaceholder.typicode.com/users";
+
+ReactDOM.render(<ContactListApp url = {url}/>, document.getElementById('root'));
 
 serviceWorker.unregister();
