@@ -1,21 +1,30 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import Avatar from '@material-ui/core/Avatar';
-import Typography from '@material-ui/core/Typography';
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
+import PhoneIcon from "@material-ui/icons/Phone";
+import EmailIcon from "@material-ui/icons/Email";
+import PublicIcon from "@material-ui/icons/Public";
 
 const BusinessCard = (props) => {
 
   const useStyles = makeStyles(theme => ({
-    card: {
-      maxWidth: 445,
+    paperRoot: {
+      width: "500px",
+      height: "315px",
+      background: "url(https://cdn.hipwallpaper.com/m/98/68/fxgPch.jpg)",
+      backgroundSize: "100% 100%"
     },
-    media: {
-      height: 0,
-      paddingTop: '56.25%', // 16:9
+    icon: {
+      verticalAlign: "middle",
+      color: "black"
+    },
+    gridContainer: {
+      height: "100%"
+    },
+    gridItem: {
+      padding: theme.spacing(1)
     }
   }));
 
@@ -25,31 +34,47 @@ const BusinessCard = (props) => {
     return null;
   }else{
     return (
-      <Card className={classes.card}>
-        <CardHeader
-          avatar={
-            <Avatar aria-label={props.user.name} src={`https://i.pravatar.cc/300?img=${props.user.id}`}>
-            </Avatar>
-          }
-          title={props.user.name}
-          subheader={props.user.email}
-        />
-        <CardMedia
-          className={classes.media}
-          image={
-            "https://image.freepik.com/free-photo/river-foggy-mountains-landscape_1204-511.jpg"
-          }
-          title="User Info"
-        />
-        <CardContent>
-          <Typography>
-            {props.user.phone}
+      <Paper className={classes.paperRoot}>
+        <Grid className={classes.gridContainer} container>
+          <Grid
+            className={classes.gridItem}
+            item
+            xs={6}
+            style={{ marginTop: "120px" }}
+            align="center"
+          >
+            <Typography style={{ textTransform: "uppercase", color: "Black", fontFamily: 'Raleway', fontSize: 20}}>
+              {props.user.name}
           </Typography>
-          <Typography>
-            {props.user.website}
+            <Typography style={{ textTransform: "uppercase", color: "Black", fontFamily: 'Raleway' }}>
+              {props.user.company.name}
           </Typography>
-        </CardContent>
-      </Card>
+          </Grid>
+          <Grid
+            className={classes.gridItem}
+            item
+            xs={6}
+            style={{ marginTop: "110px" }}
+          >
+            <div style={{ borderLeft: "2px solid grey"}}>
+              <div style={{ marginLeft: "60px" }}>
+                <Typography style={{ textTransform: "capitalize", fontFamily: 'Raleway', fontSize: 10 }}>
+                  <PhoneIcon className={classes.icon} />
+                  &nbsp;{props.user.phone}
+              </Typography>
+                <Typography style={{ textTransform: "lowercase", fontFamily: 'Raleway', fontSize: 10 }}>
+                  <EmailIcon className={classes.icon} />
+                  &nbsp;{props.user.email}
+              </Typography>
+                <Typography style={{ textTransform: "lowercase", fontFamily: 'Raleway', fontSize: 10 }}>
+                  <PublicIcon className={classes.icon} />
+                  &nbsp;{props.user.website}
+              </Typography>
+              </div>
+            </div>
+          </Grid>
+        </Grid>
+      </Paper>
     )
   }
 }
