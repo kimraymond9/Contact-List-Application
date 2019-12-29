@@ -20,7 +20,6 @@ class ContactList extends React.Component {
     this.handleBusinessCardDialogClose = this.handleBusinessCardDialogClose.bind(this)
     this.handleSearchChange = this.handleSearchChange.bind(this);
     this.handleSortChange = this.handleSortChange.bind(this);
-
   }
   
 

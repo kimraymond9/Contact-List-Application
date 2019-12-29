@@ -54,7 +54,7 @@ const BusinessCard = (props) => {
             className={classes.gridItem}
             item
             xs={6}
-            style={{ marginTop: "110px" }}
+            style={{ marginTop: "120px" }}
           >
             <div style={{ borderLeft: "2px solid grey"}}>
               <div style={{ marginLeft: "60px" }}>

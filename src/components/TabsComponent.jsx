@@ -6,6 +6,14 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Button from '@material-ui/core/Button';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
+
+
+
+import { makeStyles } from '@material-ui/core/styles';
+
+import Toolbar from '@material-ui/core/Toolbar';
 
 import ContactList from "./ContactList";
 import Report from "./Report";
@@ -33,12 +41,13 @@ const TabsComponent = (props) => {
     );
   }
 
-  const a11yProps = (index) => {
-    return {
-      id: `simple-tab-${index}`,
-      'aria-controls': `simple-tabpanel-${index}`,
-    };
-  }
+  const useStyles = makeStyles(theme => ({
+    tabs: {
+      flexGrow: 1,
+    },
+  }));
+
+  const classes = useStyles();
 
   const [value, setValue] = React.useState(0);
 
@@ -48,11 +57,20 @@ const TabsComponent = (props) => {
 
   return(
     <>
+    <div className={classes.root}>
       <AppBar position="static">
-        <Tabs centered value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Contacts" {...a11yProps(0)} />
-          <Tab label="Reports" {...a11yProps(1)} />
-        </Tabs>
+        <Toolbar>
+          <Tabs className={classes.tabs} centered value={value} onChange={handleChange} aria-label="simple tabs example">
+            <Tab label="Contacts"/>
+            <Tab label="Reports"/>
+          </Tabs>
+          <div>
+            <Button color="inherit" onClick={props.onClick}>
+              <Brightness4Icon/>
+              &nbsp;
+            </Button>
+          </div>
+        </Toolbar>
       </AppBar>
       <TabPanel value={value} index={0}>
         <div id="progressIndicator">
@@ -63,6 +81,7 @@ const TabsComponent = (props) => {
       <TabPanel value={value} index={1}>
         <Report  data={props.data}/>
       </TabPanel>
+      </div>
     </>
   )
 }
