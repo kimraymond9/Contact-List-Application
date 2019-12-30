@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from "react-dom";
-import ContactList from '../components/ContactList';
+import ContactList from './ContactList';
 
 let container = null;
 beforeEach(() => {

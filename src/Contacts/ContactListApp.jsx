@@ -7,12 +7,19 @@ class ContactListApp extends React.Component {
   
   constructor(props) {
     super(props);
+    const paletteTypePreference = 
+      localStorage.getItem('contact-app-palette-type') || 'light';
       this.state = {
         data: null,
         loading: true,
-        isThemeLight: true,
+        paletteType: paletteTypePreference
       };
     this.handleThemeChange = this.handleThemeChange.bind(this);
+    this.theme = createMuiTheme({
+      palette: {
+        type: paletteTypePreference,
+      }
+    })
   }
 
   componentDidMount() {
@@ -25,26 +32,19 @@ class ContactListApp extends React.Component {
   }
 
   handleThemeChange() { 
-    if (this.state.isThemeLight){
-      this.setState({ isThemeLight: false });
-    }else{
-      this.setState({ isThemeLight: true });
-    }
+    const newPaletteType = this.state.paletteType === 'dark' ? 'light' : 'dark';
+    this.theme = createMuiTheme({
+      palette: {
+        type: newPaletteType
+      }
+    })
+    localStorage.setItem('contact-app-palette-type', newPaletteType);
+    this.setState({ paletteType: newPaletteType });
   }
 
   render() {
-    const darkTheme = createMuiTheme({
-      palette: {
-        type: 'dark',
-      }
-    });
-    const lightTheme = createMuiTheme({
-      palette: {
-        type: 'light',
-      }
-    });
     return (
-      <MuiThemeProvider theme={this.state.isThemeLight ? lightTheme : darkTheme}>
+      <MuiThemeProvider theme={this.theme}>
       <CssBaseline />
       <Tabs data={this.state.data} loading={this.state.loading} onClick={this.handleThemeChange}/>
       </MuiThemeProvider>

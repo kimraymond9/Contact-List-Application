@@ -22,7 +22,7 @@ const InteractiveMap = (props) => {
                   <Popup>
                     {user.name}
                     <br />
-                    {user.address.geo.lat}, {user.address.geo.lng}
+                    {user.company.name}
                   </Popup>
                 </Marker>
               );

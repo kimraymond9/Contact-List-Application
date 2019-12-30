@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import ContactListApp from './components/ContactListApp';
+import ContactListApp from './Contacts/ContactListApp';
 import * as serviceWorker from './serviceWorker';
 import "./leaflet.css";
 

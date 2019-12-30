@@ -14,7 +14,7 @@ class ContactList extends React.Component {
       open: false,
       clickedUser: null,
       currentTextFieldInput: null,
-      sortSelected: null,
+      sortSelected: '',
       data: props.data,
     };
     this.handleBusinessCardDialogClose = this.handleBusinessCardDialogClose.bind(this)
@@ -95,10 +95,10 @@ class ContactList extends React.Component {
               if (user.name.toLowerCase().includes(this.state.currentTextFieldInput) ||
               user.email.toLowerCase().includes(this.state.currentTextFieldInput) ||
               this.state.currentTextFieldInput == null){
-                return <>
+                return <div key={user.id}>
                   <ContactListItem user={user} handleClick={this.handleClick}/>
                   <Divider variant="inset" component="li" />
-                </>
+                </div>
               }else{
                 return null;
               }

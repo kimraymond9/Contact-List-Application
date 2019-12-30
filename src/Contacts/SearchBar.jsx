@@ -14,7 +14,7 @@ const SearchBar = (props) => {
   const classes = useStyles();
   
   return (
-    <div class = "SearchBar">
+    <div className = "SearchBar">
       <TextField size="small" fullWidth className={classes.root} id="outlined-search" onChange={props.onChange} label="Search" type="search" InputLabelProps={{shrink: true,}} variant="outlined" />
     </div>
   )

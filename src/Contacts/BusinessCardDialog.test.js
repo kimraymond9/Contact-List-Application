@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import BusinessCardDialog from '../components/BusinessCardDialog';
+import BusinessCardDialog from './BusinessCardDialog';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
