@@ -46,8 +46,6 @@ const TabsComponent = (props) => {
     },
     toolbar: {
       minHeight: 54,
-    },
-    button: {
     }
   }));
 
@@ -69,13 +67,11 @@ const TabsComponent = (props) => {
             <Tab label="Contacts"/>
             <Tab label="Reports"/>
           </Tabs>
-          <div className={classes.button}>
-            <Tooltip title="Dark Mode" placement="bottom" arrow>
-            <IconButton className={classes.button} aria-label="delete" color="inherit" onClick={props.onClick}>
+          <Tooltip title="Dark Mode" PopperProps={{ disablePortal: true }}>
+            <IconButton color="inherit" onClick={props.onClick}>
               <Brightness4Icon />
             </IconButton>
             </Tooltip>
-            </div>
         </Toolbar>
       </AppBar>
       <TabPanel value={value} index={0}>

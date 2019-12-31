@@ -28,7 +28,7 @@ const SortBy = (props) => {
   }, []);
 
   return (
-    <div class = "SortBy">
+    <div className = "SortBy">
       <FormControl size="small" variant="outlined" className={classes.formControl}>
       <InputLabel ref={inputLabel} id="demo-simple-select-outlined-label">
         Sort

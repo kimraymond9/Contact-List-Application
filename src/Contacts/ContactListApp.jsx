@@ -44,10 +44,12 @@ class ContactListApp extends React.Component {
 
   render() {
     return (
+      <>
       <MuiThemeProvider theme={this.theme}>
       <CssBaseline />
       <Tabs data={this.state.data} loading={this.state.loading} onClick={this.handleThemeChange}/>
       </MuiThemeProvider>
+      </>
     )
   }
 }
