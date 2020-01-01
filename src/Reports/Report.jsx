@@ -9,6 +9,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import InteractiveMap from "./InteractiveMap";
 import ContactsByLetter from "./ContactsByLetter";
 import ContactList from "../Contacts/ContactList";
+import TopLevelDomains from "./TopLevelDomains";
 
 const Report = (props) => {
 
@@ -37,6 +38,18 @@ const Report = (props) => {
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
         >
+          <Typography className={classes.heading}>Company Catchphrases</Typography>
+        </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
+          <Typography>
+            <ContactList data={props.data} page={"reportpage"} />
+          </Typography>
+        </ExpansionPanelDetails>
+      </ExpansionPanel>
+      <ExpansionPanel>
+        <ExpansionPanelSummary
+          expandIcon={<ExpandMoreIcon />}
+        >
           <Typography className={classes.heading}>Number of Contacts by Letter</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
@@ -49,11 +62,11 @@ const Report = (props) => {
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
         >
-          <Typography className={classes.heading}>Company Catchphrases</Typography>
+          <Typography className={classes.heading}>Top Level Domains</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            <ContactList data={props.data} page={"reportpage"}/>
+            <TopLevelDomains data={props.data}/>
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
