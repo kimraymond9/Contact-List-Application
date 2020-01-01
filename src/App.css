@@ -12,33 +12,23 @@
   float:right;
 }
 
-.graph{
-  width:100%;
-  height:100%;
-}
 
-.chartjs-render-monitor{
-  width:inherit;
-  height:inherit;
-}
-
-canvas{
+.panels .MuiTypography-body1{
   width:100%;
   height:100%;
 }
-.chartjs-size-monitor{
-  width:100%;
-  height:100%;
-}
-.MuiTypography-root{
-  width:100%;
-  height:100%;
-}
-
 
 @media only screen and (max-width: 420px) {
   .SortBy{
     float:none;
     width:200px;
   }
+}
+
+#image{
+  filter:brightness(0.7);
+}
+
+#image #text{
+  position: absolute;
 }

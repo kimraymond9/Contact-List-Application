@@ -8,6 +8,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import InteractiveMap from "./InteractiveMap";
 import ContactsByLetter from "./ContactsByLetter";
+import ContactList from "../Contacts/ContactList";
 
 const Report = (props) => {
 
@@ -21,7 +22,7 @@ const Report = (props) => {
   const classes = useStyles();
 
   return (
-    <>
+    <div className="panels">
       <ExpansionPanel>
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
@@ -40,11 +41,23 @@ const Report = (props) => {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            <ContactsByLetter data={props.data}/>
+            <ContactsByLetter data={props.data} />
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
-    </>
+      <ExpansionPanel>
+        <ExpansionPanelSummary
+          expandIcon={<ExpandMoreIcon />}
+        >
+          <Typography className={classes.heading}>Company Catchphrases</Typography>
+        </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
+          <Typography>
+            <ContactList data={props.data} page={"reportpage"}/>
+          </Typography>
+        </ExpansionPanelDetails>
+      </ExpansionPanel>
+    </div>
   )
 }
 

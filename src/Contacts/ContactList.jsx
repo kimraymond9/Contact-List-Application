@@ -1,7 +1,7 @@
 import React from "react";
 import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
-import BusinessCardDialog from "./BusinessCardDialog";
+import ContactDialog from "./ContactDialog";
 import ContactListItem from "./ContactListItem";
 import SortBy from "./SortBy";
 import SearchBar from "./SearchBar";
@@ -89,7 +89,7 @@ class ContactList extends React.Component {
         <>
           <SearchBar onChange={this.handleSearchChange} />
           <SortBy onChange={this.handleSortChange}/>
-          <BusinessCardDialog open={this.state.open} onClose={this.handleBusinessCardDialogClose} user={this.state.clickedUser}/>
+          <ContactDialog open={this.state.open} onClose={this.handleBusinessCardDialogClose} user={this.state.clickedUser} page={this.props.page}/>
           <List>
             {this.state.data.map(user => {
               if (user.name.toLowerCase().includes(this.state.currentTextFieldInput) ||

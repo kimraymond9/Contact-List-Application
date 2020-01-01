@@ -4,20 +4,25 @@ import "../App.css";
 
 const ContactsByLetter = (props) => {
 
-  const letterFrequencies =
+  const letterFrequenciesName =
     Object.fromEntries([...Array(26).keys()].map(i =>
     [String.fromCharCode(65 + i), 0]));
+
+  const letterFrequenciesEmail =
+    Object.fromEntries([...Array(26).keys()].map(i =>
+      [String.fromCharCode(65 + i), 0]));
 
   if(!props.data){
     return null;
   }else{
-      props.data.map(contact => {
-        return letterFrequencies[contact.name[0]] += 1
+      props.data.forEach(contact => {
+        letterFrequenciesName[contact.name[0]] += 1;
+        letterFrequenciesEmail[contact.email[0]] += 1;
       })
     }
 
     const contactData = {
-      labels: Object.keys(letterFrequencies),
+      labels: Object.keys(letterFrequenciesName),
       datasets: [
         {
           label:"Contacts",
@@ -25,15 +30,23 @@ const ContactsByLetter = (props) => {
           borderWidth: 1,
           hoverBackgroundColor: 'rgba(255,99,132,0.4)',
           hoverBorderColor: 'rgba(255,99,132,1)',
-          data: Object.values(letterFrequencies),
-        }
+          data: Object.values(letterFrequenciesName),
+        },
+        {
+          label: "Email",
+          backgroundColor: ' #f1c40f ',
+          borderWidth: 1,
+          hoverBackgroundColor: ' #f1c40f ',
+          hoverBorderColor: '#f1c40f ',
+          data: Object.values(letterFrequenciesEmail),
+        },
       ]
     };
 
     const contactDataOptions = {
       title: {
         display: true,
-        text: 'Number of Contacts by Letter',
+        text: 'Number of Contacts and Email by Letter',
       },
       scales: {
         xAxes: [{
@@ -54,9 +67,7 @@ const ContactsByLetter = (props) => {
     }
 
     return (
-      <div className="graph">
         <Bar data={contactData} options={contactDataOptions}/>
-      </div>
     )
   }
 

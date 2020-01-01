@@ -78,7 +78,7 @@ const TabsComponent = (props) => {
         <div id="progressIndicator">
           {props.loading ? <CircularProgress /> : null}
         </div>
-        <ContactList data={props.data} />
+        <ContactList data={props.data} page={"contactpage"}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Report  data={props.data}/>
