@@ -1,1 +1,3 @@
+Contact List application in React framework 
 
+This application allows the user to see details and business cards of their contacts. Click on a user to to view their business card. Sorting and searching options are also available. You can also view additional reports based on your contacts such as an interactive map that shows your contacts’ locations and graphs detailing the frequency of contacts by letter.
