@@ -1,6 +1,8 @@
 import React from "react";
 import { Bar } from 'react-chartjs-2';
+
 import "../App.css";
+import COLORS from '../colors.js';
 
 const TopLevelDomains = (props) => {
 
@@ -44,10 +46,10 @@ const TopLevelDomains = (props) => {
     datasets: [
       {
         label: "Email",
-        backgroundColor: '#F50057',
+        backgroundColor: COLORS.PRIMARY_COLOR,
         borderWidth: 1,
-        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-        hoverBorderColor: 'rgba(255,99,132,1)',
+        hoverBackgroundColor: COLORS.PRIMARY_COLOR,
+        hoverBorderColor: COLORS.PRIMARY_COLOR,
         data: Object.values(domainFrequenciesForEmail),
       }
     ]
@@ -58,10 +60,10 @@ const TopLevelDomains = (props) => {
     datasets: [
       {
         label: "Websites",
-        backgroundColor: '#f1c40f',
+        backgroundColor: COLORS.SECONDARY_COLOR,
         borderWidth: 1,
-        hoverBackgroundColor: '#f1c40f',
-        hoverBorderColor: '#f1c40f',
+        hoverBackgroundColor: COLORS.SECONDARY_COLOR,
+        hoverBorderColor: COLORS.SECONDARY_COLOR,
         data: Object.values(domainFrequencies),
       }
     ]
