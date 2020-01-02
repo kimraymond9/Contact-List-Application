@@ -6,8 +6,8 @@ const TopLevelDomains = (props) => {
 
   const topLevelDomains = [];
   const topLevelDomainsForEmail = [];
-  var domainFrequencies = {};
-  var domainFrequenciesForEmail = {};
+  let domainFrequencies = {};
+  let domainFrequenciesForEmail = {};
 
   if (!props.data) {
     return null;
@@ -15,33 +15,29 @@ const TopLevelDomains = (props) => {
     props.data.forEach(contact => {
       topLevelDomains.push(`.${contact.website.split('.').pop()}`);
       const temp = `.${contact.email.split('@')}`;
-      topLevelDomainsForEmail.push(`.${temp.split('.').pop()}`);
+      topLevelDomainsForEmail.push(`.${temp.split('.').pop()}`); //getting all top level domains from emails and websites
     })
     
     const uniqueDomains = topLevelDomains.filter(function (elem, index, self) {
-      return index === self.indexOf(elem);
+      return index === self.indexOf(elem);  //gets all unique top level domains
     })
+
+
     const uniqueDomainsForEmail = topLevelDomainsForEmail.filter(function (elem, index, self) {
       return index === self.indexOf(elem);
     })
-    domainFrequencies = uniqueDomains.reduce((a, b) => (a[b] = 0, a), {});
+
+    // eslint-disable-next-line no-sequences
+    domainFrequencies = uniqueDomains.reduce((a, b) => (a[b] = 0, a), {}); //converts array of domains into an object
+    // eslint-disable-next-line no-sequences
     domainFrequenciesForEmail = uniqueDomainsForEmail.reduce((a, b) => (a[b] = 0, a), {});
     
     props.data.forEach(contact => {
-      domainFrequencies[`.${contact.website.split('.').pop()}`] += 1;
+      domainFrequencies[`.${contact.website.split('.').pop()}`] += 1; //getting counts for each domain
       const temp = `.${contact.email.split('@')}`;
       domainFrequenciesForEmail[`.${temp.split('.').pop()}`] += 1;
     })
   }
-
-  const labelsConcat = Object.keys(domainFrequencies).concat(Object.keys(domainFrequenciesForEmail))
-  const labels = labelsConcat.filter(function (elem, index, self) {
-    return index === self.indexOf(elem);
-  })
-  console.log(labels);
-  console.log(Object.keys(domainFrequencies));
-  console.log(Object.keys(domainFrequenciesForEmail));
-
 
   const emailDomain = {
     labels: Object.keys(domainFrequenciesForEmail),

@@ -1,6 +1,8 @@
 import React from "react";
+
 import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
+
 import ContactDialog from "./ContactDialog";
 import ContactListItem from "./ContactListItem";
 import SortBy from "./SortBy";
@@ -22,7 +24,6 @@ class ContactList extends React.Component {
     this.handleSortChange = this.handleSortChange.bind(this);
   }
   
-
   handleClick = (user) => {
     this.setState({
       open: true,
@@ -37,13 +38,11 @@ class ContactList extends React.Component {
   }
 
   handleSearchChange(event) {
-    console.log(event.target.value);
     event.preventDefault();
     this.setState({ currentTextFieldInput: event.target.value.trim() });
   }
 
   handleSortChange(event) {
-    console.log(event.target.value);
     event.preventDefault();
     this.setState({ sortSelected: event.target.value });
 
@@ -108,6 +107,6 @@ class ContactList extends React.Component {
       );
     }
   }
-  }
+}
 
 export default ContactList;

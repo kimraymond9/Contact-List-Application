@@ -11,7 +11,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Tooltip from '@material-ui/core/Tooltip';
 import IconButton from '@material-ui/core/IconButton';
-
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 import ContactList from "./ContactList";
@@ -71,7 +70,7 @@ const TabsComponent = (props) => {
             <IconButton color="inherit" onClick={props.onClick}>
               <Brightness4Icon />
             </IconButton>
-            </Tooltip>
+          </Tooltip>
         </Toolbar>
       </AppBar>
       <TabPanel value={value} index={0}>

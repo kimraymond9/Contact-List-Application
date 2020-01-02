@@ -1,7 +1,9 @@
 import React from "react";
-import Tabs from "./TabsComponent";
+
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+
+import Tabs from "./TabsComponent";
 
 class ContactListApp extends React.Component {
   
@@ -46,8 +48,8 @@ class ContactListApp extends React.Component {
     return (
       <>
       <MuiThemeProvider theme={this.theme}>
-      <CssBaseline />
-      <Tabs data={this.state.data} loading={this.state.loading} onClick={this.handleThemeChange}/>
+        <CssBaseline />
+        <Tabs data={this.state.data} loading={this.state.loading} onClick={this.handleThemeChange}/>
       </MuiThemeProvider>
       </>
     )

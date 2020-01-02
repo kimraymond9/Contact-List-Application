@@ -1,4 +1,5 @@
 import React from "react";
+
 import { makeStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -32,7 +33,7 @@ const Report = (props) => {
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
         >
-          <Typography className={classes.heading}>Interactive Map</Typography>
+          <Typography component={'div'} className={classes.heading}>Interactive Map</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <InteractiveMap data={props.data} />
@@ -42,10 +43,10 @@ const Report = (props) => {
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
         >
-          <Typography className={classes.heading}>Company Catchphrases</Typography>
+          <Typography component={'div'} className={classes.heading}>Company Catchphrases</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>
+          <Typography component={'div'}>
             <ContactList data={props.data} page={"reportpage"} />
           </Typography>
         </ExpansionPanelDetails>
@@ -54,10 +55,10 @@ const Report = (props) => {
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
         >
-          <Typography className={classes.heading}>Number of Contacts by Letter</Typography>
+          <Typography component={'div'} className={classes.heading}>Number of Contacts by Letter</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>
+          <Typography component={'div'}>
             <ContactsByLetter data={props.data} />
           </Typography>
         </ExpansionPanelDetails>
@@ -66,10 +67,10 @@ const Report = (props) => {
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
         >
-          <Typography className={classes.heading}>Top Level Domains</Typography>
+          <Typography component={'div'} className={classes.heading}>Top Level Domains</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>
+          <Typography component={'div'}>
             <TopLevelDomains data={props.data}/>
           </Typography>
         </ExpansionPanelDetails>

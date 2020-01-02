@@ -1,4 +1,5 @@
 import React from "react";
+
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
@@ -99,12 +100,12 @@ const BusinessCard = (props) => {
               xs={6}
               align="center"
             >
-              <Typography className={classes.leftBusinessCardName} >
+              <Typography component={'div'} className={classes.leftBusinessCardName} >
                 {props.user.name}
-            </Typography>
-              <Typography className={classes.leftBusinessCardCompany}>
+              </Typography>
+              <Typography component={'div'} className={classes.leftBusinessCardCompany}>
                 {props.user.company.name}
-            </Typography>
+              </Typography>
             </Grid>
             <Grid
               className={classes.gridItem}
@@ -113,18 +114,18 @@ const BusinessCard = (props) => {
             >
               <div style={{ borderLeft: "2px solid grey"}}>
                 <div style={{ marginLeft: "20%" }}>
-                  <Typography className={classes.rightBusinessCard}>
+                  <Typography component={'div'} className={classes.rightBusinessCard}>
                     <PhoneIcon className={classes.icon} />
                     {props.user.phone}
-                </Typography>
-                  <Typography className={classes.rightBusinessCard}>
+                  </Typography>
+                  <Typography component={'div'} className={classes.rightBusinessCard}>
                     <EmailIcon className={classes.icon} />
                     {props.user.email}
-                </Typography>
-                  <Typography className={classes.rightBusinessCard}>
+                  </Typography>
+                  <Typography component={'div'} className={classes.rightBusinessCard}>
                     <PublicIcon className={classes.icon} />
                     {props.user.website}
-                </Typography>
+                  </Typography>
                 </div>
               </div>
             </Grid>

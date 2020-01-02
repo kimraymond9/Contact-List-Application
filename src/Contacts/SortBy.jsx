@@ -1,9 +1,11 @@
 import React from "react";
+
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+
 import "../App.css"
 
 const SortBy = (props) => {
@@ -30,19 +32,20 @@ const SortBy = (props) => {
   return (
     <div className = "SortBy">
       <FormControl size="small" variant="outlined" className={classes.formControl}>
-      <InputLabel ref={inputLabel} id="demo-simple-select-outlined-label">
-        Sort
+        <InputLabel ref={inputLabel} id="demo-simple-select-outlined-label">
+          Sort
         </InputLabel>
-      <Select
-        labelId="demo-simple-select-outlined-label"
-        id="demo-simple-select-outlined"
-        onChange={props.onChange}
-        labelWidth={labelWidth}
-      >
-        <MenuItem value="AtoZ">A - Z</MenuItem>
-        <MenuItem value="ZtoA">Z - A</MenuItem>
-      </Select>
-    </FormControl>
+        <Select
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          value=""
+          onChange={props.onChange}
+          labelWidth={labelWidth}
+        >
+          <MenuItem value="AtoZ">A - Z</MenuItem>
+          <MenuItem value="ZtoA">Z - A</MenuItem>
+        </Select>
+      </FormControl>
     </div>
   )
 }
