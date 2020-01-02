@@ -17,16 +17,14 @@ const TopLevelDomains = (props) => {
 
   props.data.forEach(contact => {
     topLevelDomains.push(`.${contact.website.split('.').pop()}`);
-    const temp = `.${contact.email.split('@')}`;
-    topLevelDomainsForEmail.push(`.${temp.split('.').pop()}`); //getting all top level domains from emails and websites
+    topLevelDomainsForEmail.push(`.${contact.email.split('.').pop()}`); //getting all top level domains from emails and websites
   })
   
-  const uniqueDomains = topLevelDomains.filter(function (elem, index, self) {
+  const uniqueDomains = topLevelDomains.filter((elem, index, self) => {
     return index === self.indexOf(elem);  //gets all unique top level domains
   })
 
-
-  const uniqueDomainsForEmail = topLevelDomainsForEmail.filter(function (elem, index, self) {
+  const uniqueDomainsForEmail = topLevelDomainsForEmail.filter((elem, index, self) => {
     return index === self.indexOf(elem);
   })
 
@@ -37,8 +35,7 @@ const TopLevelDomains = (props) => {
   
   props.data.forEach(contact => {
     domainFrequencies[`.${contact.website.split('.').pop()}`] += 1; //getting counts for each domain
-    const temp = `.${contact.email.split('@')}`;
-    domainFrequenciesForEmail[`.${temp.split('.').pop()}`] += 1;
+    domainFrequenciesForEmail[`.${contact.email.split('.').pop()}`] += 1;
   })
   
   const emailDomain = {

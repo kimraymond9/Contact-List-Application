@@ -50,7 +50,7 @@ class ContactList extends React.Component {
 
     if (event.target.value === "AtoZ") {
       tempArray =
-        this.state.data.sort(function (a, b) {
+        this.state.data.sort((a, b) => {
           var nameA = a.name.toUpperCase();
           var nameB = b.name.toUpperCase();
           if (nameA < nameB) {
@@ -65,7 +65,7 @@ class ContactList extends React.Component {
     }
     if (event.target.value === "ZtoA") {
       tempArray =
-        this.state.data.sort(function (a, b) {
+        this.state.data.sort((a, b) => {
           var nameA = a.name.toUpperCase();
           var nameB = b.name.toUpperCase();
           if (nameA < nameB) {
