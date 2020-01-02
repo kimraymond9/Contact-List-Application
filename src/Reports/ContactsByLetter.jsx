@@ -11,7 +11,7 @@ const ContactsByLetter = (props) => {
   const letterFrequenciesEmail =
     Object.fromEntries([...Array(26).keys()].map(i =>
       [String.fromCharCode(65 + i), 0]));
-
+      
   if(!props.data){
     return null;
   }else{
@@ -58,9 +58,10 @@ const ContactsByLetter = (props) => {
         }],
         yAxes: [{
           display: true,
-          scaleLabel: {
-            display: true,
-            labelString: 'Frequency'
+          labelString: 'Frequency',
+          ticks: {
+            min: 0,
+            stepSize: 1,
           }
         }]
       },
