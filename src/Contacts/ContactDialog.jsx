@@ -12,39 +12,39 @@ const ContactDialog = (props) => {
 
   if(!props.user){
     return null
-  }else{
-    if(props.page === "contactpage"){
-      return(
-        <>
-          <Dialog onClose={props.onClose} aria-labelledby="customized-dialog-title" open={props.open}>
-            <Typography component={'div'} gutterBottom>
-              <BusinessCard user={props.user}/>
-            </Typography>
-            <DialogActions>
-              <Button autoFocus onClick={props.onClose} color="primary">
-                Back
-              </Button>
-            </DialogActions>
-          </Dialog>
-        </>
-      )
-    }else{
-      return (
-        <>
-          <Dialog onClose={props.onClose} aria-labelledby="customized-dialog-title" open={props.open}>
-            <Typography component={'div'} gutterBottom>
-              <CompanyCatchphrases user={props.user}/>
-            </Typography>
-            <DialogActions>
-              <Button autoFocus onClick={props.onClose} color="primary">
-                Back
-              </Button>
-            </DialogActions>
-          </Dialog>
-        </>
-      )
-    }
   }
+
+  if(props.page === "contactpage"){
+    return(
+      <>
+        <Dialog onClose={props.onClose} aria-labelledby="customized-dialog-title" open={props.open}>
+          <Typography component={'div'} gutterBottom>
+            <BusinessCard user={props.user}/>
+          </Typography>
+          <DialogActions>
+            <Button autoFocus onClick={props.onClose} color="primary">
+              Back
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </>
+    )
+  }
+  return (
+    <>
+      <Dialog onClose={props.onClose} aria-labelledby="customized-dialog-title" open={props.open}>
+        <Typography component={'div'} gutterBottom>
+          <CompanyCatchphrases user={props.user}/>
+        </Typography>
+        <DialogActions>
+          <Button autoFocus onClick={props.onClose} color="primary">
+            Back
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  )
 }
+
 
 export default ContactDialog;

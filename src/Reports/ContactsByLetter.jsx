@@ -16,12 +16,12 @@ const ContactsByLetter = (props) => {
       
   if(!props.data){
     return null;
-  }else{
-    props.data.forEach(contact => {
-      letterFrequenciesName[contact.name[0]] += 1;
-      letterFrequenciesEmail[contact.email[0]] += 1;
-    })
   }
+  
+  props.data.forEach(contact => {
+    letterFrequenciesName[contact.name[0]] += 1;
+    letterFrequenciesEmail[contact.email[0]] += 1;
+  })
 
   const contactData = {
     labels: Object.keys(letterFrequenciesName),

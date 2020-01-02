@@ -83,30 +83,30 @@ class ContactList extends React.Component {
   render(){
     if (!this.state.data) {
       return null;
-    } else {
-      return (
-        <>
-          <SearchBar onChange={this.handleSearchChange} />
-          <SortBy onChange={this.handleSortChange}/>
-          <ContactDialog open={this.state.open} onClose={this.handleBusinessCardDialogClose} user={this.state.clickedUser} page={this.props.page}/>
-          <List>
-            {this.state.data.map(user => {
-              if (user.name.toLowerCase().includes(this.state.currentTextFieldInput) ||
-              user.email.toLowerCase().includes(this.state.currentTextFieldInput) ||
-              this.state.currentTextFieldInput == null){
-                return <div key={user.id}>
-                  <ContactListItem user={user} handleClick={this.handleClick}/>
-                  <Divider variant="inset" component="li" />
-                </div>
-              }else{
-                return null;
-              }
-            })}
-          </List>
-        </>
-      );
     }
+
+    return (
+      <>
+        <SearchBar onChange={this.handleSearchChange} />
+        <SortBy onChange={this.handleSortChange}/>
+        <ContactDialog open={this.state.open} onClose={this.handleBusinessCardDialogClose} user={this.state.clickedUser} page={this.props.page}/>
+        <List>
+          {this.state.data.map(user => {
+            if (user.name.toLowerCase().includes(this.state.currentTextFieldInput) ||
+            user.email.toLowerCase().includes(this.state.currentTextFieldInput) ||
+            this.state.currentTextFieldInput == null){
+              return <div key={user.id}>
+                <ContactListItem user={user} handleClick={this.handleClick}/>
+                <Divider variant="inset" component="li" />
+              </div>
+            }
+            return null;
+          })}
+        </List>
+      </>
+    );
   }
 }
+
 
 export default ContactList;

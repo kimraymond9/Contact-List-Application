@@ -13,33 +13,34 @@ const TopLevelDomains = (props) => {
 
   if (!props.data) {
     return null;
-  } else {
-    props.data.forEach(contact => {
-      topLevelDomains.push(`.${contact.website.split('.').pop()}`);
-      const temp = `.${contact.email.split('@')}`;
-      topLevelDomainsForEmail.push(`.${temp.split('.').pop()}`); //getting all top level domains from emails and websites
-    })
-    
-    const uniqueDomains = topLevelDomains.filter(function (elem, index, self) {
-      return index === self.indexOf(elem);  //gets all unique top level domains
-    })
-
-
-    const uniqueDomainsForEmail = topLevelDomainsForEmail.filter(function (elem, index, self) {
-      return index === self.indexOf(elem);
-    })
-
-    // eslint-disable-next-line no-sequences
-    domainFrequencies = uniqueDomains.reduce((a, b) => (a[b] = 0, a), {}); //converts array of domains into an object
-    // eslint-disable-next-line no-sequences
-    domainFrequenciesForEmail = uniqueDomainsForEmail.reduce((a, b) => (a[b] = 0, a), {});
-    
-    props.data.forEach(contact => {
-      domainFrequencies[`.${contact.website.split('.').pop()}`] += 1; //getting counts for each domain
-      const temp = `.${contact.email.split('@')}`;
-      domainFrequenciesForEmail[`.${temp.split('.').pop()}`] += 1;
-    })
   }
+  
+  props.data.forEach(contact => {
+    topLevelDomains.push(`.${contact.website.split('.').pop()}`);
+    const temp = `.${contact.email.split('@')}`;
+    topLevelDomainsForEmail.push(`.${temp.split('.').pop()}`); //getting all top level domains from emails and websites
+  })
+  
+  const uniqueDomains = topLevelDomains.filter(function (elem, index, self) {
+    return index === self.indexOf(elem);  //gets all unique top level domains
+  })
+
+
+  const uniqueDomainsForEmail = topLevelDomainsForEmail.filter(function (elem, index, self) {
+    return index === self.indexOf(elem);
+  })
+
+  // eslint-disable-next-line no-sequences
+  domainFrequencies = uniqueDomains.reduce((a, b) => (a[b] = 0, a), {}); //converts array of domains into an object
+  // eslint-disable-next-line no-sequences
+  domainFrequenciesForEmail = uniqueDomainsForEmail.reduce((a, b) => (a[b] = 0, a), {});
+  
+  props.data.forEach(contact => {
+    domainFrequencies[`.${contact.website.split('.').pop()}`] += 1; //getting counts for each domain
+    const temp = `.${contact.email.split('@')}`;
+    domainFrequenciesForEmail[`.${temp.split('.').pop()}`] += 1;
+  })
+  
 
   const emailDomain = {
     labels: Object.keys(domainFrequenciesForEmail),
