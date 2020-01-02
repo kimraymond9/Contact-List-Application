@@ -14,7 +14,7 @@ const TopLevelDomains = (props) => {
   if (!props.data) {
     return null;
   }
-  
+
   props.data.forEach(contact => {
     topLevelDomains.push(`.${contact.website.split('.').pop()}`);
     const temp = `.${contact.email.split('@')}`;
@@ -41,7 +41,6 @@ const TopLevelDomains = (props) => {
     domainFrequenciesForEmail[`.${temp.split('.').pop()}`] += 1;
   })
   
-
   const emailDomain = {
     labels: Object.keys(domainFrequenciesForEmail),
     datasets: [

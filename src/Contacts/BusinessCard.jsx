@@ -91,47 +91,45 @@ const BusinessCard = (props) => {
     return null;
   }
   return (
-    <>
-      <Paper className={classes.paperRoot}>
-        <Grid className={classes.gridContainer} container>
-          <Grid
-            className={classes.gridItem}
-            item
-            xs={6}
-            align="center"
-          >
-            <Typography component={'div'} className={classes.leftBusinessCardName} >
-              {props.user.name}
-            </Typography>
-            <Typography component={'div'} className={classes.leftBusinessCardCompany}>
-              {props.user.company.name}
-            </Typography>
-          </Grid>
-          <Grid
-            className={classes.gridItem}
-            item
-            xs={6}
-          >
-            <div style={{ borderLeft: "2px solid grey"}}>
-              <div style={{ marginLeft: "20%" }}>
-                <Typography component={'div'} className={classes.rightBusinessCard}>
-                  <PhoneIcon className={classes.icon} />
-                  {props.user.phone}
-                </Typography>
-                <Typography component={'div'} className={classes.rightBusinessCard}>
-                  <EmailIcon className={classes.icon} />
-                  {props.user.email}
-                </Typography>
-                <Typography component={'div'} className={classes.rightBusinessCard}>
-                  <PublicIcon className={classes.icon} />
-                  {props.user.website}
-                </Typography>
-              </div>
-            </div>
-          </Grid>
+    <Paper className={classes.paperRoot}>
+      <Grid className={classes.gridContainer} container>
+        <Grid
+          className={classes.gridItem}
+          item
+          xs={6}
+          align="center"
+        >
+          <Typography component={'div'} className={classes.leftBusinessCardName} >
+            {props.user.name}
+          </Typography>
+          <Typography component={'div'} className={classes.leftBusinessCardCompany}>
+            {props.user.company.name}
+          </Typography>
         </Grid>
-      </Paper>
-    </>
+        <Grid
+          className={classes.gridItem}
+          item
+          xs={6}
+        >
+          <div style={{ borderLeft: "2px solid grey"}}>
+            <div style={{ marginLeft: "20%" }}>
+              <Typography component={'div'} className={classes.rightBusinessCard}>
+                <PhoneIcon className={classes.icon} />
+                {props.user.phone}
+              </Typography>
+              <Typography component={'div'} className={classes.rightBusinessCard}>
+                <EmailIcon className={classes.icon} />
+                {props.user.email}
+              </Typography>
+              <Typography component={'div'} className={classes.rightBusinessCard}>
+                <PublicIcon className={classes.icon} />
+                {props.user.website}
+              </Typography>
+            </div>
+          </div>
+        </Grid>
+      </Grid>
+    </Paper>
   )
 }
 

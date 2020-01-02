@@ -17,7 +17,7 @@ const ContactsByLetter = (props) => {
   if(!props.data){
     return null;
   }
-  
+
   props.data.forEach(contact => {
     letterFrequenciesName[contact.name[0]] += 1;
     letterFrequenciesEmail[contact.email[0]] += 1;
@@ -70,7 +70,7 @@ const ContactsByLetter = (props) => {
   }
 
   return (
-      <Bar data={contactData} options={contactDataOptions}/>
+    <Bar data={contactData} options={contactDataOptions}/>
   )
 }
 

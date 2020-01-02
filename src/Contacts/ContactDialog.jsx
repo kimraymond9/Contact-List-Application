@@ -31,18 +31,16 @@ const ContactDialog = (props) => {
     )
   }
   return (
-    <>
-      <Dialog onClose={props.onClose} aria-labelledby="customized-dialog-title" open={props.open}>
-        <Typography component={'div'} gutterBottom>
-          <CompanyCatchphrases user={props.user}/>
-        </Typography>
-        <DialogActions>
-          <Button autoFocus onClick={props.onClose} color="primary">
-            Back
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </>
+    <Dialog onClose={props.onClose} aria-labelledby="customized-dialog-title" open={props.open}>
+      <Typography component={'div'} gutterBottom>
+        <CompanyCatchphrases user={props.user}/>
+      </Typography>
+      <DialogActions>
+        <Button autoFocus onClick={props.onClose} color="primary">
+          Back
+        </Button>
+      </DialogActions>
+    </Dialog>
   )
 }
 

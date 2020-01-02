@@ -8,9 +8,8 @@ const InteractiveMap = (props) => {
   if (!props.data) {
     return null;
   }
-  
+
   return (
-    <>
       <Map center={[-40, -40]} zoom={1}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -31,7 +30,6 @@ const InteractiveMap = (props) => {
           );
         })}
       </Map>
-    </>
   );
 }
 

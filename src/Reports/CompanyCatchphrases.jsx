@@ -44,16 +44,14 @@ const CompanyCatchphrases = (props) => {
   const classes = useStyles();
 
   return (
-    <>
-      <Paper className={classes.paperRoot} id="image">
-        <Typography component={'div'} className={classes.companyName} id="text">
-          {props.user.company.name}
-        </Typography>
-        <Typography component={'div'} className={classes.catchprases} id="text">
-          {props.user.company.catchPhrase}
-        </Typography>
-      </Paper>
-    </>
+    <Paper className={classes.paperRoot} id="image">
+      <Typography component={'div'} className={classes.companyName} id="text">
+        {props.user.company.name}
+      </Typography>
+      <Typography component={'div'} className={classes.catchprases} id="text">
+        {props.user.company.catchPhrase}
+      </Typography>
+    </Paper>
   )
 }
 
