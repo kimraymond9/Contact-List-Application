@@ -1,9 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render, unmountComponentAtNode } from "react-dom";
 import TabsComponent from './TabsComponent';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<TabsComponent />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  render(<TabsComponent />, div);
+  unmountComponentAtNode(div);
+});
+
+it('circular progress stops when fetch occurs', () => {
+  const div = document.createElement('div');
+  const el = document.querySelector('div.progressIndicator')
+  render(<TabsComponent />, div);
+  
 });

@@ -7,4 +7,3 @@ it('renders without crashing', () => {
   render(<ContactListApp />, div);
   unmountComponentAtNode(div);
 });
-

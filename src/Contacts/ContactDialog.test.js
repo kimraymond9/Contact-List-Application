@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import ContactDialog from './ContactDialog.test';
+import { render, unmountComponentAtNode } from "react-dom";
+import ContactDialog from './ContactDialog';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<ContactDialog />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  render(<ContactDialog />, div);
+  unmountComponentAtNode(div);
 });
