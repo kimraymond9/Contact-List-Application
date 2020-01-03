@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
+import { CircularProgress } from "@material-ui/core";
 
 import "../App.css";
 
 const CompanyCatchphrases = (props) => {
 
+  const [loading, setLoading] = useState(true);
+
   const useStyles = makeStyles(theme => ({
     paperRoot: {
       width: "500px",
       height: "315px",
-      background: `url(https://picsum.photos/id/${props.user.id + 9}/1024/768)`, //+9 changes the index to get different randomly generated images
-      backgroundSize: "100% 100%",
       ['@media (max-width:600px)']: { // eslint-disable-line no-useless-computed-key
         width: '400px',
         height: '252px',
@@ -39,21 +40,32 @@ const CompanyCatchphrases = (props) => {
       color: "white",
       fontFamily: "raleway"
     },
+    spinner: {
+      width: '40px',
+      display: 'block',
+      margin: 'auto',
+      top: '50%',
+      position: 'relative'
+    }
   }))
 
   const classes = useStyles();
 
-  if(!props.user){
-  }
-
   return (
     <Paper className={classes.paperRoot} id="image">
-      <Typography component={'div'} className={classes.companyName} id="text">
-        {props.user.company.name}
-      </Typography>
-      <Typography component={'div'} className={classes.catchprases} id="text">
-        {props.user.company.catchPhrase}
-      </Typography>
+      {loading && <CircularProgress className={classes.spinner} />}
+      <img
+        src={`https://picsum.photos/id/${props.user.id + 9}/500/315`}
+        alt={props.user.company.catchPhrase}
+        onLoad={() => setLoading(false)}
+      />
+      {!loading && <>
+        <Typography component={'div'} className={classes.companyName} id="text">
+          {props.user.company.name}
+        </Typography>
+        <Typography component={'div'} className={classes.catchprases} id="text">
+          {props.user.company.catchPhrase}
+        </Typography></>}
     </Paper>
   )
 }
