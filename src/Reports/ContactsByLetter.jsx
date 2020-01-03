@@ -16,10 +16,6 @@ const ContactsByLetter = (props) => {
     fromEntries([...Array(26).keys()].map(i =>
     [String.fromCharCode(65 + i), 0]));
       
-  if(!props.data){
-    return null;
-  }
-
   props.data.forEach(contact => {
     letterFrequenciesName[contact.name[0]] += 1;
     letterFrequenciesEmail[contact.email[0]] += 1;

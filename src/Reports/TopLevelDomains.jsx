@@ -11,9 +11,6 @@ const TopLevelDomains = (props) => {
   let domainFrequencies = {};
   let domainFrequenciesForEmail = {};
 
-  if (!props.data) {
-  }
-
   props.data.forEach(contact => {
     topLevelDomains.push(`.${contact.website.split('.').pop()}`);
     topLevelDomainsForEmail.push(`.${contact.email.split('.').pop()}`); //getting all top level domains from emails and websites

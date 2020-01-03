@@ -4,10 +4,6 @@ import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 import "../leaflet.css"
 
 const InteractiveMap = (props) => {
-
-  if (!props.data) {
-  }
-
   return (
       <Map center={[-40, -40]} zoom={1}>
         <TileLayer

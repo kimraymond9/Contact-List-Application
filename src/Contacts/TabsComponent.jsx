@@ -58,9 +58,6 @@ const TabsComponent = (props) => {
 
   const isMinWidth600px = useMediaQuery('(min-width:600px)');
 
-  if (!props.data) {
-  }
-
   return(
     <>
       <AppBar position="static">

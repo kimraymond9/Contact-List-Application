@@ -86,9 +86,6 @@ const BusinessCard = (props) => {
   }));
 
   const classes = useStyles();
-
-  if(!props.user){
-  }
   return (
     <Paper className={classes.paperRoot}>
       <Grid className={classes.gridContainer} container>

@@ -83,9 +83,6 @@ class ContactList extends React.Component {
   }
 
   render(){
-    if (!this.state.data) {
-    }
-
     return (
       <>
         <SearchBar onChange={this.handleSearchChange}/>
