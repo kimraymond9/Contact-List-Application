@@ -9,7 +9,7 @@ import Select from '@material-ui/core/Select';
 import "../App.css"
 
 const SortBy = (props) => {
-
+  
   const useStyles = makeStyles(theme => ({
     formControl: {
       marginTop: theme.spacing(1),
@@ -38,7 +38,7 @@ const SortBy = (props) => {
         <Select
           labelId="demo-simple-select-outlined-label"
           id="demo-simple-select-outlined"
-          value=""
+          value={props.sortSelected}
           onChange={props.onChange}
           labelWidth={labelWidth}
         >
