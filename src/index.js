@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import ContactListApp from './Contacts/ContactListApp';
 import * as serviceWorker from './serviceWorker';
 
-import './index.css';
+
 import "./leaflet.css";
 
 const url = "http://jsonplaceholder.typicode.com/users";
