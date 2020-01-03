@@ -12,6 +12,7 @@ const CompanyCatchphrases = (props) => {
     paperRoot: {
       width: "500px",
       height: "315px",
+      background: `url(https://picsum.photos/id/${props.user.id + 9}/1024/768)`, //+9 changes the index to get different randomly generated images
       backgroundSize: "100% 100%",
       ['@media (max-width:600px)']: { // eslint-disable-line no-useless-computed-key
         width: '400px',
@@ -43,11 +44,10 @@ const CompanyCatchphrases = (props) => {
   const classes = useStyles();
 
   if(!props.user){
-    return null;
   }
 
   return (
-    <Paper className={classes.paperRoot} id="image" background={`url(https://picsum.photos/id/${props.user.id + 9}/1024/768)`}> {/* +9 changes the index to get different randomly generated images*/}
+    <Paper className={classes.paperRoot} id="image">
       <Typography component={'div'} className={classes.companyName} id="text">
         {props.user.company.name}
       </Typography>
