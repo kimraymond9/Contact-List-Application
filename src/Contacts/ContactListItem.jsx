@@ -11,7 +11,6 @@ import "../App.css";
 const ContactListItem = (props) => {
   
   if(!props.user){
-    return null;
   }
 
   return (

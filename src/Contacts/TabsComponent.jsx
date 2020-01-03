@@ -59,7 +59,6 @@ const TabsComponent = (props) => {
   const isMinWidth600px = useMediaQuery('(min-width:600px)');
 
   if (!props.data) {
-    return null;
   }
 
   return(
@@ -78,10 +77,11 @@ const TabsComponent = (props) => {
         </Toolbar>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <div id="progressIndicator">
-          {props.loading ? <CircularProgress /> : null}
-        </div>
-        <ContactList data={props.data} page={"contactpage"}/>
+          {props.loading ?
+            <div id="progressIndicator">
+              <CircularProgress />
+            </div> :
+        <ContactList data={props.data} page={"contactpage"}/>}
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Report  data={props.data}/>

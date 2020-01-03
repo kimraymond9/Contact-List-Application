@@ -6,7 +6,6 @@ import "../leaflet.css"
 const InteractiveMap = (props) => {
 
   if (!props.data) {
-    return null;
   }
 
   return (

@@ -12,7 +12,6 @@ const TopLevelDomains = (props) => {
   let domainFrequenciesForEmail = {};
 
   if (!props.data) {
-    return null;
   }
 
   props.data.forEach(contact => {

@@ -88,7 +88,6 @@ const BusinessCard = (props) => {
   const classes = useStyles();
 
   if(!props.user){
-    return null;
   }
   return (
     <Paper className={classes.paperRoot}>
