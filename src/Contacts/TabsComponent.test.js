@@ -7,10 +7,3 @@ it('renders without crashing', () => {
   render(<TabsComponent />, div);
   unmountComponentAtNode(div);
 });
-
-it('circular progress stops when fetch occurs', () => {
-  const div = document.createElement('div');
-  const el = document.querySelector('div.progressIndicator')
-  render(<TabsComponent />, div);
-  
-});
