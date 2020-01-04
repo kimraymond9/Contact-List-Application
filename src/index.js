@@ -1,14 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import ContactListApp from './Contacts/ContactListApp';
-import * as serviceWorker from './serviceWorker';
-
+import ContactListApp from "./Contacts/ContactListApp";
+import * as serviceWorker from "./serviceWorker";
 
 import "./leaflet.css";
 
 const url = "http://jsonplaceholder.typicode.com/users";
 
-ReactDOM.render(<ContactListApp url = {url}/>, document.getElementById('root'));
+ReactDOM.render(<ContactListApp url={url} />, document.getElementById("root"));
 
 serviceWorker.unregister();

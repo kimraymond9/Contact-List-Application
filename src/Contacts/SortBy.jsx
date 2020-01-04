@@ -1,15 +1,14 @@
 import React from "react";
 
-import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+import { makeStyles } from "@material-ui/core/styles";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
 
-import "../App.css"
+import "../App.css";
 
-const SortBy = (props) => {
-  
+const SortBy = props => {
   const useStyles = makeStyles(theme => ({
     formControl: {
       marginTop: theme.spacing(1),
@@ -17,8 +16,8 @@ const SortBy = (props) => {
       width: 100
     },
     selectEmpty: {
-      marginTop: theme.spacing(2),
-    },
+      marginTop: theme.spacing(2)
+    }
   }));
 
   const classes = useStyles();
@@ -30,8 +29,12 @@ const SortBy = (props) => {
   }, []);
 
   return (
-    <div className = "SortBy">
-      <FormControl size="small" variant="outlined" className={classes.formControl}>
+    <div className="SortBy">
+      <FormControl
+        size="small"
+        variant="outlined"
+        className={classes.formControl}
+      >
         <InputLabel ref={inputLabel} id="demo-simple-select-outlined-label">
           Sort
         </InputLabel>
@@ -47,7 +50,7 @@ const SortBy = (props) => {
         </Select>
       </FormControl>
     </div>
-  )
-}
+  );
+};
 
 export default SortBy;

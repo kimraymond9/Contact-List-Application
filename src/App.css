@@ -1,46 +1,46 @@
-#progressIndicator{
-      margin:auto;
-    width: 1%;
-    padding: 10px 0px 10px 0px;
+#progressIndicator {
+  margin: auto;
+  width: 1%;
+  padding: 10px 0px 10px 0px;
 }
 
-.SearchBar{
+.SearchBar {
   display: inline-block;
 }
 
-.SortBy{
-  float:right;
+.SortBy {
+  float: right;
 }
 
-.panels .MuiTypography-body1{
-  width:100%;
-  height:100%;
+.panels .MuiTypography-body1 {
+  width: 100%;
+  height: 100%;
 }
 
-.barGraph{
-  width:50%;
-  height:50%;
+.barGraph {
+  width: 50%;
+  height: 50%;
   display: inline-block;
 }
 
 @media only screen and (max-width: 420px) {
-  .SortBy{
-    float:none;
-    width:200px;
+  .SortBy {
+    float: none;
+    width: 200px;
   }
 }
 
 @media only screen and (max-width: 700px) {
-  .barGraph{
-    width:100%;
-    height:100%;
+  .barGraph {
+    width: 100%;
+    height: 100%;
   }
 }
 
-#image{
-  filter:brightness(0.7);
+#image {
+  filter: brightness(0.7);
 }
 
-#image #text{
+#image #text {
   position: absolute;
 }
