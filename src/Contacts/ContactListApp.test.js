@@ -10,7 +10,7 @@ fetch = jest
     Promise.resolve({ ok: true, json: () => contacts })
   );
 
-it("progress indicator is displayed while contacts are being fetched", () => {
+it("fetch is working correctly", () => {
   render(<ContactListApp url="http://jsonplaceholder.typicode.com/users" />);
   expect(fetch).toHaveBeenLastCalledWith(
     "http://jsonplaceholder.typicode.com/users"
