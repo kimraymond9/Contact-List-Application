@@ -99,7 +99,7 @@ class ContactList extends React.Component {
             <CompanyCatchphrases user={this.state.clickedUser} />
           )}
         </ContactDialog>
-        <List>
+        <List data-testid="contact-list">
           {this.state.data.map(user => {
             if (
               user.name

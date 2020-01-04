@@ -78,7 +78,7 @@ const TabsComponent = props => {
       </AppBar>
       <TabPanel value={value} index={0}>
         {props.loading ? (
-          <div id="progressIndicator">
+          <div id="progress-indicator" data-testid="progress-indicator">
             <CircularProgress />
           </div>
         ) : (
