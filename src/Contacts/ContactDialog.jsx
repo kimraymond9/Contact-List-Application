@@ -16,7 +16,12 @@ const ContactDialog = props => (
       {props.children}
     </Typography>
     <DialogActions>
-      <Button autoFocus onClick={props.onClose} color="primary">
+      <Button
+        autoFocus
+        onClick={props.onClose}
+        color="primary"
+        data-testid="contact-dialog-back-button"
+      >
         Back
       </Button>
     </DialogActions>

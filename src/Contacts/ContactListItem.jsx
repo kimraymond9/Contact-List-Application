@@ -27,6 +27,7 @@ const ContactListItem = props => {
       alignItems="flex-start"
       button
       onClick={() => props.handleClick(props.user)}
+      data-testid={`user-list-item-${props.user.id}`}
     >
       <ListItemAvatar>
         <>
