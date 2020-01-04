@@ -46,7 +46,8 @@ const ContactListItem = props => {
             <Typography component="span" variant="body2" color="textPrimary">
               {props.user.email}
             </Typography>
-            {" — " + props.user.phone}
+            {" — "}
+            <span>{props.user.phone}</span>
           </React.Fragment>
         }
       />
