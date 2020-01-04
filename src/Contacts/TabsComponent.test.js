@@ -1,38 +1,23 @@
 import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
+import { render, fireEvent } from "@testing-library/react";
 import TabsComponent from "./TabsComponent";
+import contacts from "../contacts.json";
 
-it("renders without crashing", () => {
-  const div = document.createElement("div");
-  render(
-    <TabsComponent
-      data={[
-        {
-          id: 1,
-          name: "Leanne Graham",
-          username: "Bret",
-          email: "Sincere@april.biz",
-          address: {
-            street: "Kulas Light",
-            suite: "Apt. 556",
-            city: "Gwenborough",
-            zipcode: "92998-3874",
-            geo: {
-              lat: "-37.3159",
-              lng: "81.1496"
-            }
-          },
-          phone: "1-770-736-8031 x56442",
-          website: "hildegard.org",
-          company: {
-            name: "Romaguera-Crona",
-            catchPhrase: "Multi-layered client-server neural-net",
-            bs: "harness real-time e-markets"
-          }
-        }
-      ]}
-    />,
-    div
+// mock the reports so we dont unnecessarily render charts and maps
+jest.mock("../Reports/Report", () => ({
+  default: jest.fn(() => <p>foo bar</p>),
+  __esModule: true
+}));
+
+it("displays the contacts tab correctly", () => {
+  const { getByTestId } = render(
+    <TabsComponent data={contacts} loading={false} />
   );
-  unmountComponentAtNode(div);
+  expect(getByTestId("contact-list")).toBeInTheDocument();
+});
+
+it("displays the reports tab correctly", () => {
+  const { getByText } = render(<TabsComponent data={contacts} />);
+  fireEvent.click(getByText("Reports"));
+  expect(getByText("foo bar")).toBeInTheDocument();
 });
