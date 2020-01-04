@@ -10,6 +10,7 @@ const ContactDialog = props => (
     onClose={props.onClose}
     aria-labelledby="customized-dialog-title"
     open={props.open}
+    data-testid="contact-dialog"
   >
     <Typography component={"div"} gutterBottom>
       {props.children}

@@ -1,36 +1,22 @@
 import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
+import { render } from "@testing-library/react";
 import ContactDialog from "./ContactDialog";
 
-it("renders without crashing", () => {
-  const div = document.createElement("div");
-  render(
-    <ContactDialog
-      user={{
-        id: 1,
-        name: "Leanne Graham",
-        username: "Bret",
-        email: "Sincere@april.biz",
-        address: {
-          street: "Kulas Light",
-          suite: "Apt. 556",
-          city: "Gwenborough",
-          zipcode: "92998-3874",
-          geo: {
-            lat: "-37.3159",
-            lng: "81.1496"
-          }
-        },
-        phone: "1-770-736-8031 x56442",
-        website: "hildegard.org",
-        company: {
-          name: "Romaguera-Crona",
-          catchPhrase: "Multi-layered client-server neural-net",
-          bs: "harness real-time e-markets"
-        }
-      }}
-    />,
-    div
+it("displays contact dialog when open is true", () => {
+  const { getByTestId } = render(<ContactDialog open />);
+  expect(getByTestId("contact-dialog")).toBeInTheDocument();
+});
+
+it("does not display contact dialog when open is false", () => {
+  const { queryByTestId } = render(<ContactDialog open={false} />);
+  expect(queryByTestId("contact-dialog")).not.toBeInTheDocument();
+});
+
+it("displays children as its content", () => {
+  const { getByText } = render(
+    <ContactDialog open>
+      <p>foo bar</p>
+    </ContactDialog>
   );
-  unmountComponentAtNode(div);
+  expect(getByText("foo bar")).toBeInTheDocument();
 });
