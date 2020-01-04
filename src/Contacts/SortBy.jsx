@@ -6,8 +6,6 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
-import "../App.css";
-
 const SortBy = props => {
   const useStyles = makeStyles(theme => ({
     formControl: {

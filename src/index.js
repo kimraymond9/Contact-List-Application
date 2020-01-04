@@ -5,6 +5,7 @@ import ContactListApp from "./Contacts/ContactListApp";
 import * as serviceWorker from "./serviceWorker";
 
 import "./leaflet.css";
+import "./App.css";
 
 const url = "http://jsonplaceholder.typicode.com/users";
 

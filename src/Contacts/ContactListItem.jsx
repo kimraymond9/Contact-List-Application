@@ -7,7 +7,6 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
-import "../App.css";
 import { CircularProgress } from "@material-ui/core";
 
 const ContactListItem = props => {

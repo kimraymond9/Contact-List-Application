@@ -15,8 +15,6 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import ContactList from "./ContactList";
 import Report from "../Reports/Report";
-
-import "../App.css";
 import BusinessCard from "./BusinessCard";
 
 const TabsComponent = props => {

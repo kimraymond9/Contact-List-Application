@@ -1,7 +1,6 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 
-import "../App.css";
 import COLORS from "../colors.js";
 
 const TopLevelDomains = props => {
@@ -12,11 +11,11 @@ const TopLevelDomains = props => {
 
   props.data.forEach(contact => {
     topLevelDomains.push(`.${contact.website.split(".").pop()}`);
-    topLevelDomainsForEmail.push(`.${contact.email.split(".").pop()}`); //getting all top level domains from emails and websites
+    topLevelDomainsForEmail.push(`.${contact.email.split(".").pop()}`); // getting all top level domains from emails and websites
   });
 
   const uniqueDomains = topLevelDomains.filter((elem, index, self) => {
-    return index === self.indexOf(elem); //gets all unique top level domains
+    return index === self.indexOf(elem); // gets all unique top level domains
   });
 
   const uniqueDomainsForEmail = topLevelDomainsForEmail.filter(
@@ -26,7 +25,7 @@ const TopLevelDomains = props => {
   );
 
   // eslint-disable-next-line no-sequences
-  domainFrequencies = uniqueDomains.reduce((a, b) => ((a[b] = 0), a), {}); //converts array of domains into an object
+  domainFrequencies = uniqueDomains.reduce((a, b) => ((a[b] = 0), a), {}); // converts array of domains into an object
   // eslint-disable-next-line no-sequences
   domainFrequenciesForEmail = uniqueDomainsForEmail.reduce(
     // eslint-disable-next-line no-sequences
@@ -35,7 +34,7 @@ const TopLevelDomains = props => {
   );
 
   props.data.forEach(contact => {
-    domainFrequencies[`.${contact.website.split(".").pop()}`] += 1; //getting counts for each domain
+    domainFrequencies[`.${contact.website.split(".").pop()}`] += 1; // getting counts for each domain
     domainFrequenciesForEmail[`.${contact.email.split(".").pop()}`] += 1;
   });
 
