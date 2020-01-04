@@ -11,6 +11,7 @@ import InteractiveMap from "./InteractiveMap";
 import ContactsByLetter from "./ContactsByLetter";
 import ContactList from "../Contacts/ContactList";
 import TopLevelDomains from "./TopLevelDomains";
+import CompanyCatchphrases from "./CompanyCatchphrases";
 
 const Report = props => {
   const useStyles = makeStyles(theme => ({
@@ -46,7 +47,10 @@ const Report = props => {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography component={"div"}>
-            <ContactList data={props.data} page={"reportpage"} />
+            <ContactList
+              data={props.data}
+              OnUserClickedComponent={CompanyCatchphrases}
+            />
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>

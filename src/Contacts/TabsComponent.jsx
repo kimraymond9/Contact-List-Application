@@ -17,6 +17,7 @@ import ContactList from "./ContactList";
 import Report from "../Reports/Report";
 
 import "../App.css";
+import BusinessCard from "./BusinessCard";
 
 const TabsComponent = props => {
   const TabPanel = props => {
@@ -82,7 +83,10 @@ const TabsComponent = props => {
             <CircularProgress />
           </div>
         ) : (
-          <ContactList data={props.data} page={"contactpage"} />
+          <ContactList
+            data={props.data}
+            OnUserClickedComponent={BusinessCard}
+          />
         )}
       </TabPanel>
       <TabPanel value={value} index={1}>

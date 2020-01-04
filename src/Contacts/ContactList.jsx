@@ -7,8 +7,6 @@ import ContactDialog from "./ContactDialog";
 import ContactListItem from "./ContactListItem";
 import SortBy from "./SortBy";
 import SearchBar from "./SearchBar";
-import CompanyCatchphrases from "../Reports/CompanyCatchphrases";
-import BusinessCard from "./BusinessCard";
 
 class ContactList extends React.Component {
   constructor(props) {
@@ -93,11 +91,7 @@ class ContactList extends React.Component {
           open={this.state.open}
           onClose={this.handleBusinessCardDialogClose}
         >
-          {this.props.page === "contactpage" ? (
-            <BusinessCard user={this.state.clickedUser} />
-          ) : (
-            <CompanyCatchphrases user={this.state.clickedUser} />
-          )}
+          <this.props.OnUserClickedComponent user={this.state.clickedUser} />
         </ContactDialog>
         <List data-testid="contact-list">
           {this.state.data.map(user => {
