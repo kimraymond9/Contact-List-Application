@@ -65,7 +65,7 @@ const CompanyCatchphrases = props => {
       <img
         className={classes.image}
         src={`https://picsum.photos/id/${props.user.id + 9}/500/315`}
-        alt={props.user.company.catchPhrase}
+        alt=""
         onLoad={() => setLoading(false)}
         data-testid="company-image"
       />
