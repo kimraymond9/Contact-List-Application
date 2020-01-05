@@ -52,14 +52,19 @@ const CompanyCatchphrases = props => {
 
   return (
     <Paper className={classes.paperRoot} id="image">
-      {loading && <CircularProgress className={classes.spinner} />}
+      {loading && (
+        <div data-testid="catchphrases-progress-indicator">
+          <CircularProgress className={classes.spinner} />
+        </div>
+      )}
       <img
         src={`https://picsum.photos/id/${props.user.id + 9}/500/315`}
         alt={props.user.company.catchPhrase}
         onLoad={() => setLoading(false)}
+        data-testid="company-image"
       />
       {!loading && (
-        <>
+        <div data-testid="company-catchphrase">
           <Typography
             component={"div"}
             className={classes.companyName}
@@ -74,7 +79,7 @@ const CompanyCatchphrases = props => {
           >
             {props.user.company.catchPhrase}
           </Typography>
-        </>
+        </div>
       )}
     </Paper>
   );
