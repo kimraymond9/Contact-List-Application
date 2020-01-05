@@ -46,12 +46,12 @@ const Report = props => {
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography component={"div"}>
+          <div className="panels">
             <ContactList
               data={props.data}
               OnUserClickedComponent={CompanyCatchphrases}
             />
-          </Typography>
+          </div>
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <ExpansionPanel>
@@ -61,9 +61,7 @@ const Report = props => {
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography component={"div"}>
-            <ContactsByLetter data={props.data} />
-          </Typography>
+          <ContactsByLetter data={props.data} />
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <ExpansionPanel>
@@ -74,9 +72,7 @@ const Report = props => {
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography component={"div"}>
-            <TopLevelDomains data={props.data} />
-          </Typography>
+          <TopLevelDomains data={props.data} />
         </ExpansionPanelDetails>
       </ExpansionPanel>
     </div>

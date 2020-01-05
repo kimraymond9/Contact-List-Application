@@ -1,11 +1,19 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
+import { makeStyles } from "@material-ui/core/styles";
 
 import COLORS from "../colors.js";
 
 import fromEntries from "fromentries";
 
 const ContactsByLetter = props => {
+  const useStyles = makeStyles(theme => ({
+    graph: {
+      width: "100%",
+      height: "100%",
+      position: "relative"
+    }
+  }));
   const letterFrequenciesName = fromEntries(
     [...Array(26).keys()].map(i => [String.fromCharCode(65 + i), 0])
   ); // creating an object containing every letter of the alphabet.
@@ -69,8 +77,10 @@ const ContactsByLetter = props => {
     }
   };
 
+  const classes = useStyles();
+
   return (
-    <div data-testid="bar-graph">
+    <div data-testid="bar-graph" className={classes.graph}>
       <Bar data={contactData} options={contactDataOptions} />
     </div>
   );

@@ -21,10 +21,14 @@
   float: right;
 }
 
-.panels .MuiTypography-body1 {
+.panels {
   /* fix for contacts by letter graph not filling the panel */
   width: 100%;
   height: 100%;
+}
+
+.topLevelDomains {
+  width: 100%;
 }
 
 .barGraph {
@@ -46,7 +50,7 @@
   /* displays the two graphs each with width and height of 100% when screen gets smaller*/
   .barGraph {
     width: 100%;
-    height: 100%;
+    display: inline-block;
   }
 }
 
