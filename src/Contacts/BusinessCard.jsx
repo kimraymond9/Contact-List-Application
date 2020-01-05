@@ -37,8 +37,8 @@ const BusinessCard = props => {
       }
     },
     businessCardImage: {
-      width: "500px",
-      height: "315px",
+      width: "inherit",
+      height: "inherit",
       position: "fixed"
     },
     spinner: {

@@ -45,6 +45,10 @@ const CompanyCatchphrases = props => {
       margin: "auto",
       top: "50%",
       position: "relative"
+    },
+    image: {
+      width: "inherit",
+      height: "inherit"
     }
   }));
 
@@ -59,6 +63,7 @@ const CompanyCatchphrases = props => {
         />
       )}
       <img
+        className={classes.image}
         src={`https://picsum.photos/id/${props.user.id + 9}/500/315`}
         alt={props.user.company.catchPhrase}
         onLoad={() => setLoading(false)}
