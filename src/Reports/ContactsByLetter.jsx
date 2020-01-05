@@ -69,7 +69,11 @@ const ContactsByLetter = props => {
     }
   };
 
-  return <Bar data={contactData} options={contactDataOptions} />;
+  return (
+    <div data-testid="bar-graph">
+      <Bar data={contactData} options={contactDataOptions} />
+    </div>
+  );
 };
 
 export default ContactsByLetter;
