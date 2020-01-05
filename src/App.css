@@ -4,6 +4,11 @@
   padding: 10px 0px 10px 0px;
 }
 
+.leaflet-container {
+  height: 420px;
+  width: 100%;
+}
+
 .SearchBar {
   display: inline-block;
 }
