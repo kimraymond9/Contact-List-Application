@@ -124,7 +124,7 @@ const TopLevelDomains = props => {
 
   return (
     <>
-      <div className="barGraph">
+      <div className="barGraph" data-testid="bar-graph-domain">
         <Bar data={emailDomain} options={emailDomainOptions} />
       </div>
       <div className="barGraph">
