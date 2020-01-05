@@ -57,11 +57,11 @@ const BusinessCard = props => {
     },
     gridItem: {
       padding: theme.spacing(1),
-      marginTop: "24%",
+      paddingTop: "24%",
       "@media (max-width:470px)": {
         width: "300px",
         height: "189px",
-        marginTop: "15%"
+        paddingTop: "15%"
       },
       zIndex: 1
     },
@@ -72,7 +72,7 @@ const BusinessCard = props => {
       fontSize: 20,
       "@media (max-width:470px)": {
         fontSize: 10,
-        marginTop: "10%"
+        paddingTop: "10%"
       }
     },
     leftBusinessCardCompany: {
@@ -82,11 +82,12 @@ const BusinessCard = props => {
       fontSize: 10,
       "@media (max-width:470px)": {
         fontSize: 8,
-        marginTop: "10%"
+        paddingTop: "10%"
       }
     },
     rightBusinessCard: {
       textTransform: "capitalize",
+      color: "Black",
       fontFamily: "Raleway",
       fontSize: 10,
       "@media (max-width:470px)": {
