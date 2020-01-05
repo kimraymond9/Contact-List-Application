@@ -4,6 +4,12 @@ This application allows the user to see details and business cards of their cont
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Running the App
+
+1. Clone the repository.
+2. Run `npm install` in the root directory.
+3. Run `npm start` in the root directory.
+
 ## Available Scripts
 
 In the project directory, you can run:
