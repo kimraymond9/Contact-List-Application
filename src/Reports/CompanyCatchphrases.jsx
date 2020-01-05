@@ -25,7 +25,7 @@ const CompanyCatchphrases = props => {
     },
     companyName: {
       position: "absolute",
-      bottom: "20%",
+      bottom: "50%",
       left: "16px",
       fontSize: 30,
       color: "white",
