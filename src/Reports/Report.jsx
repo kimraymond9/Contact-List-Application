@@ -32,7 +32,7 @@ const Report = props => {
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
           <Typography component={"div"} className={classes.heading}>
-            Interactive Map
+            Map which shows the location of every contact's company
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
@@ -42,7 +42,7 @@ const Report = props => {
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
           <Typography component={"div"} className={classes.heading}>
-            Company Catchphrases
+            Catchphrases of every contact's company
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
@@ -57,7 +57,7 @@ const Report = props => {
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
           <Typography component={"div"} className={classes.heading}>
-            Number of Contacts by Letter
+            Number of contact names and emails beginning with certain letters
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
@@ -69,7 +69,8 @@ const Report = props => {
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
           <Typography component={"div"} className={classes.heading}>
-            Top Level Domains
+            Number of contact emails and websites registered on certain
+            top-level domains
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>

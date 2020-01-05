@@ -23,7 +23,7 @@ const ContactsByLetter = props => {
     labels: Object.keys(letterFrequenciesName),
     datasets: [
       {
-        label: "Contacts",
+        label: "Name",
         backgroundColor: COLORS.PRIMARY_COLOR,
         borderWidth: 1,
         hoverBackgroundColor: COLORS.PRIMARY_COLOR,
@@ -42,10 +42,6 @@ const ContactsByLetter = props => {
   };
 
   const contactDataOptions = {
-    title: {
-      display: true,
-      text: "Number of Contacts and Email by Letter"
-    },
     scales: {
       xAxes: [
         {
@@ -60,6 +56,10 @@ const ContactsByLetter = props => {
         {
           display: true,
           labelString: "Frequency",
+          scaleLabel: {
+            display: true,
+            labelString: "Frequency"
+          },
           ticks: {
             min: 0,
             stepSize: 1

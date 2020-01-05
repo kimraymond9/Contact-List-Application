@@ -56,7 +56,7 @@ const TopLevelDomains = props => {
     labels: Object.keys(domainFrequencies),
     datasets: [
       {
-        label: "Websites",
+        label: "Website",
         backgroundColor: COLORS.SECONDARY_COLOR,
         borderWidth: 1,
         hoverBackgroundColor: COLORS.SECONDARY_COLOR,
@@ -67,17 +67,13 @@ const TopLevelDomains = props => {
   };
 
   const emailDomainOptions = {
-    title: {
-      display: true,
-      text: "Email Top Level Domains"
-    },
     scales: {
       xAxes: [
         {
           display: true,
           scaleLabel: {
             display: true,
-            labelString: "Domain"
+            labelString: "Top-Level Domain"
           }
         }
       ],
@@ -85,6 +81,10 @@ const TopLevelDomains = props => {
         {
           display: true,
           labelString: "Frequency",
+          scaleLabel: {
+            display: true,
+            labelString: "Frequency"
+          },
           ticks: {
             min: 0,
             stepSize: 1
@@ -95,17 +95,13 @@ const TopLevelDomains = props => {
   };
 
   const websiteDomainOptions = {
-    title: {
-      display: true,
-      text: "Website Top Level Domains"
-    },
     scales: {
       xAxes: [
         {
           display: true,
           scaleLabel: {
             display: true,
-            labelString: "Domain"
+            labelString: "Top-Level Domain"
           }
         }
       ],
@@ -113,6 +109,10 @@ const TopLevelDomains = props => {
         {
           display: true,
           labelString: "Frequency",
+          scaleLabel: {
+            display: true,
+            labelString: "Frequency"
+          },
           ticks: {
             min: 0,
             stepSize: 1
