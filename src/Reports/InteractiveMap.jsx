@@ -1,11 +1,10 @@
 import React from "react";
 
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
-import "../leaflet.css";
 
 const InteractiveMap = props => {
   return (
-    <div data-testid="interactive-map">
+    <div className="leaflet-container" data-testid="interactive-map">
       <Map center={[-40, -40]} zoom={1}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
