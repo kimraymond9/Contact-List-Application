@@ -68,7 +68,7 @@ const TabsComponent = props => {
             <Tab label="Contacts" />
             <Tab label="Reports" />
           </Tabs>
-          <Tooltip title="Dark Mode" PopperProps={{ disablePortal: true }}>
+          <Tooltip title="Dark Mode">
             <IconButton color="inherit" onClick={props.onClick}>
               <Brightness4Icon />
             </IconButton>
