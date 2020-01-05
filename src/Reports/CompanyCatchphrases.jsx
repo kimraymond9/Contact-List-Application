@@ -53,9 +53,10 @@ const CompanyCatchphrases = props => {
   return (
     <Paper className={classes.paperRoot} id="image">
       {loading && (
-        <div data-testid="catchphrases-progress-indicator">
-          <CircularProgress className={classes.spinner} />
-        </div>
+        <CircularProgress
+          data-testid="catchphrases-progress-indicator"
+          className={classes.spinner}
+        />
       )}
       <img
         src={`https://picsum.photos/id/${props.user.id + 9}/500/315`}
